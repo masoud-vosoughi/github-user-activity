@@ -3,6 +3,7 @@ import sys
 from urllib.error import HTTPError, URLError
 
 from github_activity.client import fetch_events
+from github_activity.formatter import format_event
 
 
 def main() -> int:
@@ -25,8 +26,14 @@ def main() -> int:
     except URLError as exc:
         print(f"Error: Connection failed: {exc.reason}", file=sys.stderr)
         return 1
+    if not events:
+        print("No recent public activity found.")
+        return 0
 
-    print(f"Fetched {len(events)} events.")
+    for event in events:
+        message = format_event(event)
+        print(f"- {message}")
+
     return 0
 
 
