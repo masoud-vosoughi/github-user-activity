@@ -23,7 +23,7 @@ Built as part of the [roadmap.sh GitHub User Activity project](https://roadmap.s
 Clone the repository:
 
 ```bash
-git clone <https://github.com/masoud-vosoughi/github-user-activity.git>
+git clone https://github.com/masoud-vosoughi/github-user-activity.git
 cd github-user-activity
 ```
 
